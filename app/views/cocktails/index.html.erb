@@ -1,0 +1,22 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img1.mashed.com/img/gallery/the-most-popular-cocktails-to-make-during-quarantine/intro-1590094211.jpg);">
+  <div class="container">
+    <h1>Mister Cocktail</h1>
+    <p>The place to find the best cocktail recipes</p>
+    <%= link_to "Add cocktail", new_cocktail_path, class: 'btn btn-success' %>
+  </div>
+</div>
+
+<div class="container my-4">
+  <div class="cocktail-list">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card">
+        <%= image_tag "https://st2.depositphotos.com/2634317/5517/i/600/depositphotos_55171765-stock-photo-drink-of-lemon.jpg", class: "card-img-top", alt: cocktail.name %>
+        <div class="card-body">
+          <h5 class="card-title"><%= cocktail.name %></h5>
+          <p class="card-text">Delicious cocktail</p>
+          <%= link_to "More details", cocktail_path(cocktail), class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
